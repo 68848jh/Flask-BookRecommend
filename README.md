@@ -2,8 +2,6 @@
 # 智能图书推荐系统                          
 ------------------------------------------------------------------------------------------------
 
-~~互联网访问地址[http://198.56.183.11:8080](http://198.56.183.11:8080)~~
-
 数据集下载地址[http://www2.informatik.uni-freiburg.de/~cziegler/BX/](http://www2.informatik.uni-freiburg.de/~cziegler/BX/)
 
 #### `主页`
@@ -36,12 +34,7 @@
 
 *  对图书数据使用tensorflow和GPU加速实现了初版的协同过滤算法
 （为了tensorflow的tensor运算，所以会创建比较大的矩阵，会初始化2个约27W乘10W的矩阵）
-作者训练环境配置：
-```       
-环境：ubuntu 
-内存：64G
-显卡：TaiTanXP * 4  （4*12G）
-```
+
 速度有比较大的提升。一天内可以训练完成。但是内存占用极高。接近42G内存。
 所以在git上面CF4TensorFlow.py这个文件中第12行：    
 ```
@@ -61,36 +54,13 @@ Rating=Rating[:5000]
 
 ## 所需运行环境
 
-* 使用python3.6作为编程语言。使用mysql作为数据库存储.
+* 使用python3.7作为编程语言。使用mysql作为数据库存储.
 * 需要安装pandas,flask，pymysql.
 *　安装方式:
 ```
     pip install pandas
     pip install flask
     pip install pymysql
-```
-
-
-## 联系作者：
-QQ：470581985
-
-## 项目源码介绍
-
-图书推荐系统
-```
-----Flask-BookRecommend-Mysql\
-    |----data                         >这个文件夹中存放数据集，数据集比较杂乱。
-    |----image\                       
-    |----web\                        >web端 
-    |    |----logger.py               >日志记录
-    |    |----config.yml              >配置参数
-    |    |----logs                    >日志
-    |    |----app.py                  >web入口
-    |    |----utils.py                >辅助模块
-    |----CF_use_python.py            >协同过滤：CF 算法
-    |----CF_use_tensorflow.py        >使用tensorflow实现的协同过滤CF算法
-    |----read_data_save_to_mysql.py  >读取data文件夹里面的书籍存储到数据库中
-    |----README.md
 ```
 
 ## 项目启动方式：
@@ -107,12 +77,6 @@ QQ：470581985
 * 使用下载数据中的UserID和其对应的Location作为账号密码登录网站。
 
 * 系统管理员的账号：admin 密码：admin 通过这个账号密码进入后台管理
-
-Example：
-* `UserID/账号`：
-    - 39027
-* `UserName/密码`：
-    - tempe, arizona, usa
 
 ## 项目思路：
 
@@ -131,6 +95,3 @@ Example：
     + 之后会做成按天更新
     + 目前的项目是实时推荐的，使用sql语句实现的
     
-##  wx赞赏码：如果对你有用或者你需要帮你改进此项目
-<img src="https://img-blog.csdnimg.cn/20190124140409316.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNjY0ODQ1,size_16,color_FFFFFF,t_70" width="300" height="350">
-
